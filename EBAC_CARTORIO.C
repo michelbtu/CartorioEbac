@@ -163,7 +163,7 @@ int main()
     		
     		case 4:
     		printf("Obrigado por ultilizar o sistema!\n");
-    		system("pause");
+    		return 0;
    			break;	
     		
     		
