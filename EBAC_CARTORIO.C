@@ -83,12 +83,12 @@ int consulta()
 	
 	if(file == NULL)
 	{
-		printf("Cadastro não localizado, por favor informar CPF valido!");
+		printf("Cadastro não localizado, por favor informar CPF valido!\n");
 	}
 	
 	while(fgets(conteudo, 200, file)!=NULL)
 	{
-		printf("Essas são as informações do usuário solicitado:");
+		printf("Essas são as informações do usuário solicitado: ");
 		printf("%s", conteudo);
 		
 	}
@@ -109,6 +109,7 @@ int deletar()
 	scanf("%s", cpf);
 	
 	remove(cpf);
+		printf("O usuário solicitado foi deletado com sucesso! \n");
 	
 	FILE *file;
 	file = fopen(cpf, "r");
@@ -139,6 +140,7 @@ int main()
         printf("\t 1 - Registrar nomes\n\n");
         printf("\t 2 - Consutar nomes\n\n");
         printf("\t 3 - Deletar nomes\n\n");
+        printf("\t 4 - Sair do sistema\n\n");
         printf("Opção: ");// Fim do menu
     
         scanf("%d", &opcao);// Armazenando escolha do usuário.
@@ -158,6 +160,12 @@ int main()
     	    case 3:
     		deletar();// Inicio da seleção de funções
     		break;
+    		
+    		case 4:
+    		printf("Obrigado por ultilizar o sistema!\n");
+    		system("pause");
+   			break;	
+    		
     		
     	    default: // Se nenhum dos cases anteriores seja atendido
     		printf("Essa opção não está disponivel!\n");
